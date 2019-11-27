@@ -147,3 +147,14 @@ body .content {
   cursor: pointer;
   font-weight: 600;
 }
+.message{
+  display: flex;
+  margin-bottom: 8px;
+}
+.pseudo{
+  font-weight: bold;
+  color: red;
+}
+.avatar{
+  margin-right: 12px;
+}

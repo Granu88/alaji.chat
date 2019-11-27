@@ -25,6 +25,20 @@ const socket = io({
     avatar: avatar
   }
 })
+socket.on('message', function(value){
+  addMessage(`
+    <div class="message">
+      <div class="avatar">
+        <img src="${value.avatar}" width="60px">
+      </div>
+      <div class="content">
+        <div class="pseudo">${value.pseudo}</div>
+        ${value.message}
+      </div>
+    </div>
+    `)
+
+})
 
 document.querySelector('[data-avatar]').setAttribute('src', avatar)
 document.querySelector('[data-pseudo]').textContent = pseudo
@@ -34,6 +48,7 @@ document.getElementById('send').addEventListener('submit', function (e) {
   const value = this.querySelector('input').value
   if (value) {
     // Send message
+    socket.emit("message", value)
     console.log(value)
     this.querySelector('input').value = null
   }
