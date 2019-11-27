@@ -69,6 +69,7 @@ body .content {
   overflow: auto;
   margin: 0 -15px;
   padding: 0 15px;
+  word-break: break-all;
 }
 
 .user {
@@ -156,5 +157,5 @@ body .content {
   color: red;
 }
 .avatar{
-  margin-right: 12px;
+  margin-right: 24px;
 }
